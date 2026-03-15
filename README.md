@@ -200,12 +200,22 @@ Please ensure your code follows our [Ruff](https://github.com/astral-sh/ruff) an
 
 <table border="0">
   <tr>
-    <td width="52" valign="middle"><img src="assets/revlinkicon.png" width="44" alt="Icon"></td>
-    <td valign="middle"><strong>Official Docs</strong>: [revvlink.revvlabs.in](https://revvlink.revvlabs.in)</td>
+    <td width="52" valign="middle">
+      <img src="assets/revlinkicon.png" width="44" alt="Icon">
+    </td>
+    <td valign="middle">
+      <strong>Official Docs</strong>:
+      <a href="https://revvlink.revvlabs.in">revvlink.revvlabs.in</a>
+    </td>
   </tr>
   <tr>
-    <td width="52" valign="middle"><img src="assets/revlinkicon.png" width="44" alt="Icon"></td>
-    <td valign="middle"><strong>Community</strong>: [Discord Server](https://discord.gg/7KcKr2Grc7)</td>
+    <td width="52" valign="middle">
+      <img src="assets/revlinkicon.png" width="44" alt="Icon">
+    </td>
+    <td valign="middle">
+      <strong>Community</strong>:
+      <a href="https://discord.gg/7KcKr2Grc7">Discord Server</a>
+    </td>
   </tr>
 </table>
 
