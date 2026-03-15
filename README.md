@@ -76,6 +76,10 @@
     <td width="52" valign="middle"><img src="assets/revlinkicon.png" width="44" alt="Icon"></td>
     <td valign="middle"><strong>Strictly Typed</strong>: Developed with Pyright strict compliance to ensure your code is bug-free and easy to maintain.</td>
   </tr>
+  <tr>
+    <td width="52" valign="middle"><img src="assets/revlinkicon.png" width="44" alt="Icon"></td>
+    <td valign="middle"><strong>AI-Ready Documentation</strong>: Integration with Context 7 ensures our documentation is perfectly readable for AI, allowing you to build and debug faster.</td>
+  </tr>
 </table>
 
 ---
@@ -184,11 +188,11 @@ pytest
 ### <img src="assets/revlinkicon.png" width="32" align="center" alt="Icon"> Contributing
 
 We welcome contributions! If you'd like to help improve RevvLink:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/amazing-feature`).
-3. Commit your changes (`git commit -m 'Add some amazing feature'`).
-4. Push to the branch (`git push origin feature/amazing-feature`).
-5. Open a Pull Request.
+1. **Fork** the repository to your own account.
+2. **Clone** your fork and create a new feature branch (`git checkout -b feature/amazing-feature`).
+3. **Commit** your improvements (`git commit -m 'feat: add some amazing feature'`).
+4. **Push** the changes to your fork (`git push origin feature/amazing-feature`).
+5. **Open a Pull Request** from your fork to our `main` branch.
 
 Please ensure your code follows our [Ruff](https://github.com/astral-sh/ruff) and [Pyright](https://github.com/microsoft/pyright) configurations.
 
@@ -197,11 +201,11 @@ Please ensure your code follows our [Ruff](https://github.com/astral-sh/ruff) an
 <table border="0">
   <tr>
     <td width="52" valign="middle"><img src="assets/revlinkicon.png" width="44" alt="Icon"></td>
-    <td valign="middle"><strong>Official Docs</strong>: Coming soon!</td>
+    <td valign="middle"><strong>Official Docs</strong>: [revvlink.revvlabs.in](https://revvlink.revvlabs.in)</td>
   </tr>
   <tr>
     <td width="52" valign="middle"><img src="assets/revlinkicon.png" width="44" alt="Icon"></td>
-    <td valign="middle"><strong>Community</strong>: Support Server coming soon!</td>
+    <td valign="middle"><strong>Community</strong>: [Discord Server](https://discord.gg/7KcKr2Grc7)</td>
   </tr>
 </table>
 

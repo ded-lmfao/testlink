@@ -126,7 +126,7 @@ extra:
       link: https://pypi.org/project/revvlink/
       name: PyPI
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/revvlink
+      link: https://discord.gg/7KcKr2Grc7
       name: Discord
   version:
     provider: mike
