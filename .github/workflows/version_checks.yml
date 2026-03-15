@@ -1,0 +1,41 @@
+name: Version Checks
+run-name: Py Version checks - ${{ github.ref_name }} by @${{ github.actor }}
+
+ 
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - nixx
+  pull_request:
+    branches:
+      - main
+      - dev
+      - nixx
+ 
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install uv
+          uv pip install --system -e ".[dev]"
+      - name: Ruff Check
+        run: ruff check .
+      - name: Ruff Format Check
+        run: ruff format --check .
+      - name: Pyright
+        run: pyright
+      - name: Run tests with coverage
+        run: pytest --cov

@@ -1,0 +1,102 @@
+name: Sonar Analysis
+run-name: Sonar Analysis - ${{ github.ref_name }} by @${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - main
+      - nixx
+  pull_request:
+    branches:
+      - main
+      - nixx
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and analyze
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          pip install uv
+          uv pip install --system -e ".[dev]"
+      - name: Run tests with coverage
+        run: pytest --cov=revvlink --cov-report=xml --cov-report=term-missing
+      - uses: SonarSource/sonarqube-scan-action@v6
+        with:
+          args: >
+            -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
+            -Dsonar.pullrequest.branch=${{ github.head_ref }}
+            -Dsonar.pullrequest.base=${{ github.base_ref }}
+            -Dsonar.python.coverage.reportPaths=coverage.xml
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - name: SonarQube Quality Gate check
+        uses: sonarsource/sonarqube-quality-gate-action@v1
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+      - name: Fetch and Generate SVG Badges
+        if: always()
+        run: |
+          # Fetch metrics from API
+          RESPONSE=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" "${{ secrets.SONAR_HOST_URL }}/api/measures/component?component=RevvLink&metricKeys=coverage,alert_status,bugs,vulnerabilities,code_smells")
+          
+          # Extract values
+          STATUS=$(echo "$RESPONSE" | jq -r '.component.measures[] | select(.metric=="alert_status") | .value' || echo "UNKNOWN")
+          COVERAGE=$(echo "$RESPONSE" | jq -r '.component.measures[] | select(.metric=="coverage") | .value' || echo "0")
+          BUGS=$(echo "$RESPONSE" | jq -r '.component.measures[] | select(.metric=="bugs") | .value' || echo "0")
+          VULN=$(echo "$RESPONSE" | jq -r '.component.measures[] | select(.metric=="vulnerabilities") | .value' || echo "0")
+          SMELLS=$(echo "$RESPONSE" | jq -r '.component.measures[] | select(.metric=="code_smells") | .value' || echo "0")
+
+          # Map status to color
+          [ "$STATUS" = "OK" ] && COLOR="brightgreen" || COLOR="red"
+          
+          mkdir -p assets
+          
+          # Generate SVGs via Shields.io static API and save locally
+          curl -s "https://img.shields.io/badge/quality%20gate-$STATUS-$COLOR?style=flat-square" > assets/quality_gate.svg
+          curl -s "https://img.shields.io/badge/coverage-$COVERAGE%25-brightgreen?style=flat-square" > assets/coverage.svg
+          curl -s "https://img.shields.io/badge/bugs-$BUGS-red?style=flat-square" > assets/bugs.svg
+          curl -s "https://img.shields.io/badge/vulnerabilities-$VULN-orange?style=flat-square" > assets/vulnerabilities.svg
+          curl -s "https://img.shields.io/badge/code%20smells-$SMELLS-yellow?style=flat-square" > assets/code_smells.svg
+          
+          # Also keep the JSON for reference
+          echo "{\"status\": \"$STATUS\", \"coverage\": \"$COVERAGE\", \"bugs\": \"$BUGS\", \"vulnerabilities\": \"$VULN\", \"code_smells\": \"$SMELLS\", \"last_updated\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"}" > assets/metrics.json
+
+      - name: Push Badges to shield-stats
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Clone the shield-stats branch into a separate directory to avoid messing with current source
+          git clone --branch shield-stats https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git shield_repo
+          
+          # Copy only the badges we updated
+          mkdir -p shield_repo/assets
+          cp assets/*.svg shield_repo/assets/
+          cp assets/metrics.json shield_repo/assets/
+          
+          cd shield_repo
+          git add assets/*.svg assets/metrics.json
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: update stats badges [skip ci]"
+            git push origin shield-stats
+          fi
