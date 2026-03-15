@@ -9,7 +9,7 @@
     <a href="https://pypi.org/project/revvlink/"><img src="https://img.shields.io/pypi/v/RevvLink?style=for-the-badge&color=blue" alt="PyPI version"></a>
     <a href="https://pypi.org/project/revvlink/"><img src="https://img.shields.io/pypi/pyversions/RevvLink?style=for-the-badge&color=3776AB" alt="Python versions"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License"></a>
-    <img src="https://img.shields.io/badge/Status-Development_Phase-orange?style=for-the-badge" alt="Development Status">
+    <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge" alt="Status">
   </p>
   
   <p align="center">
@@ -35,8 +35,6 @@
 
 ---
 
-> [!IMPORTANT]
-> **RevvLink is currently in an active development phase.** Features and APIs are subject to change as we work towards a stable 1.0.0 release.
 
 **RevvLink** is a next-generation, high-performance Lavalink wrapper built specifically for modern Discord bot development in Python. Engineered with versatility and scale in mind, RevvLink offers a professional-grade API that makes audio integration seamless and powerful. Inspired by Wavelink.
 
