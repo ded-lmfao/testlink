@@ -1,0 +1,1611 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The most powerful, modern Lavalink v4 wrapper for Python. Built for production Discord bots with enterprise-grade audio features.">
+      
+      
+      
+        <link rel="canonical" href="https://revvlink.revvlabs.in/">
+      
+      
+      
+        <link rel="next" href="installation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/revlinkicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>RevvLink — Elite Lavalink Wrapper for Python - RevvLink</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="RevvLink" class="md-header__button md-logo" aria-label="RevvLink" data-md-component="logo">
+      
+  <img src="assets/revlinkicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RevvLink
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RevvLink — Elite Lavalink Wrapper for Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/RevvLabs/RevvLink" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RevvLabs/RevvLink
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="." class="md-tabs__link">
+          
+  
+  
+  Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="guides/node-pool/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="api/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="recipes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="RevvLink" class="md-nav__button md-logo" aria-label="RevvLink" data-md-component="logo">
+      
+  <img src="assets/revlinkicon.png" alt="logo">
+
+    </a>
+    RevvLink
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/RevvLabs/RevvLink" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RevvLabs/RevvLink
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/instant-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instant Start ⚡
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/node-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node & Pool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/tracks-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracks & Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Queue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/autoplay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AutoPlay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/chat-widget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat Widget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Queue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/playable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/payloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payloads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/enums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+<!-- ═══════════════════════════ HERO SECTION ═══════════════════════════ -->
+<div class="revv-hero-wrapper" id="revvHero">
+  <!-- Parallax Background -->
+  <div class="revv-hero-bg" id="revvParallaxBg">
+    <div class="revv-orb revv-orb-1"></div>
+    <div class="revv-orb revv-orb-2"></div>
+    <div class="revv-orb revv-orb-3"></div>
+    <div class="revv-hero-flare"></div>
+    <canvas class="revv-particle-canvas" id="revvParticles"></canvas>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="revv-hero-inner">
+
+    <!-- Release badge -->
+    <a class="revv-badge revv-animate-in" href="https://github.com/ded-lmfao/RevvLink" target="_blank" rel="noopener">
+      <span class="revv-badge-dot"></span>
+      <span>v1.0.0 — Now Available on PyPI</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.5">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </a>
+
+
+    <!-- Serif Headline -->
+    <h1 class="revv-headline revv-animate-in" style="animation-delay:.12s">
+      <span class="revv-gradient-text">RevvLink</span>
+    </h1>
+
+
+    <div class="revv-hero-actions revv-animate-in" style="animation-delay:.28s">
+      <a href="installation/" class="revv-btn revv-btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        Get Started
+      </a>
+      <a href="api/" class="revv-btn revv-btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+        </svg>
+        API Reference
+      </a>
+      <a href="https://github.com/ded-lmfao/RevvLink" class="revv-btn revv-btn-outline" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+        GitHub
+      </a>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="revv-stats-bar revv-animate-in" style="animation-delay:.36s">
+      <div class="revv-stat-item">
+        <span class="revv-stat-value">v4</span>
+        <span class="revv-stat-desc">Lavalink</span>
+      </div>
+      <div class="revv-stat-sep"></div>
+      <div class="revv-stat-item">
+        <span class="revv-stat-value" data-target="411">411</span>
+        <span class="revv-stat-desc">Tests Passing</span>
+      </div>
+      <div class="revv-stat-sep"></div>
+      <div class="revv-stat-item">
+        <span class="revv-stat-value">3.10+</span>
+        <span class="revv-stat-desc">Python</span>
+      </div>
+      <div class="revv-stat-sep"></div>
+      <div class="revv-stat-item">
+        <span class="revv-stat-value">MIT</span>
+        <span class="revv-stat-desc">License</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="revv-scroll-hint">
+    <div class="revv-scroll-mouse">
+      <div class="revv-scroll-wheel"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ QUICK CODE ═══════════════════════════ -->
+<section class="revv-section revv-section-code">
+  <div class="revv-section-container">
+    <div class="revv-section-label revv-scroll-reveal">Quick Start</div>
+    <h2 class="revv-section-title revv-scroll-reveal" data-delay="0.05">Music in 30 Seconds</h2>
+    <p class="revv-section-desc revv-scroll-reveal" data-delay="0.1">From zero to streaming music in your Discord bot
+      with just a few lines of code.</p>
+
+    <div class="revv-code-window revv-scroll-reveal" data-delay="0.15">
+      <div class="revv-code-titlebar">
+        <div class="revv-code-dots">
+          <span class="revv-dot revv-dot-red"></span>
+          <span class="revv-dot revv-dot-yellow"></span>
+          <span class="revv-dot revv-dot-green"></span>
+        </div>
+        <span class="revv-code-filename">bot.py</span>
+        <div class="revv-code-lang">Python</div>
+      </div>
+      <div class="revv-code-body">
+        <pre><code class="language-python"><span class="revv-c"># 1. Connect your Lavalink node</span>
+<span class="revv-k">import</span> revvlink
+
+<span class="revv-k">async def</span> <span class="revv-fn">setup_hook</span>(<span class="revv-p">self</span>) -> <span class="revv-t">None</span>:
+    nodes = [revvlink.<span class="revv-cls">Node</span>(uri=<span class="revv-s">"http://localhost:2333"</span>, password=<span class="revv-s">"youshallnotpass"</span>)]
+    <span class="revv-k">await</span> revvlink.<span class="revv-cls">Pool</span>.connect(nodes=nodes, client=<span class="revv-p">self</span>)
+
+<span class="revv-c"># 2. Search and play a track</span>
+<span class="revv-k">async def</span> <span class="revv-fn">play</span>(<span class="revv-p">ctx</span>, *, query: <span class="revv-t">str</span>) -> <span class="revv-t">None</span>:
+    player: revvlink.<span class="revv-cls">Player</span> = <span class="revv-k">await</span> ctx.author.voice.channel.connect(cls=revvlink.<span class="revv-cls">Player</span>)
+
+    tracks: revvlink.<span class="revv-cls">Search</span> = <span class="revv-k">await</span> revvlink.<span class="revv-cls">Playable</span>.search(query)
+    <span class="revv-k">await</span> player.queue.put_wait(tracks[<span class="revv-n">0</span>])
+
+    <span class="revv-k">if not</span> player.playing:
+        <span class="revv-k">await</span> player.play(player.queue.get())</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FEATURES GRID ═══════════════════════════ -->
+<section class="revv-section revv-section-features">
+  <div class="revv-section-container">
+    <div class="revv-section-label revv-scroll-reveal">Why RevvLink</div>
+    <h2 class="revv-section-title revv-scroll-reveal" data-delay="0.05">Built for Scale</h2>
+    <p class="revv-section-desc revv-scroll-reveal" data-delay="0.1">Every feature is designed with production workloads
+      in mind.</p>
+
+    <div class="revv-features-grid">
+
+      <div class="revv-feature-card revv-scroll-reveal" data-delay="0.0">
+        <div class="revv-feature-icon revv-icon-orange">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <h3>Elite Performance</h3>
+        <p>Fully async architecture handles thousands of concurrent players with minimal overhead using efficient
+          <code>asyncio</code> patterns.
+        </p>
+      </div>
+
+      <div class="revv-feature-card revv-scroll-reveal" data-delay="0.07">
+        <div class="revv-feature-icon revv-icon-cyan">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+          </svg>
+        </div>
+        <h3>Self-Healing Pool</h3>
+        <p>Automatic node failover and session recovery. If a node drops, your music keeps playing seamlessly on another
+          node.</p>
+      </div>
+
+      <div class="revv-feature-card revv-scroll-reveal" data-delay="0.14">
+        <div class="revv-feature-icon revv-icon-rose">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.07 4.93a10 10 0 0 1 0 14.14M16.24 7.76a6 6 0 0 1 0 8.49M4.93 19.07a10 10 0 0 1 0-14.14M7.76 16.24a6 6 0 0 1 0-8.49">
+            </path>
+          </svg>
+        </div>
+        <h3>Regional Load Balancing</h3>
+        <p>Intelligent penalty-based node selection routes players to the best Lavalink node based on latency and load.
+        </p>
+      </div>
+
+      <div class="revv-feature-card revv-scroll-reveal" data-delay="0.21">
+        <div class="revv-feature-icon revv-icon-green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+          </svg>
+        </div>
+        <h3>Precision Filters</h3>
+        <p>Professional-grade audio manipulation — Bass Boost, Nightcore, Timescale, 15-band EQ with millisecond
+          precision.</p>
+      </div>
+
+      <div class="revv-feature-card revv-scroll-reveal" data-delay="0.28">
+        <div class="revv-feature-icon revv-icon-amber">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+          </svg>
+        </div>
+        <h3>Intelligent AutoPlay</h3>
+        <p>Recommendation engine fetches related tracks automatically, keeping queues flowing without any user input.
+        </p>
+      </div>
+
+      <div class="revv-feature-card revv-scroll-reveal" data-delay="0.35">
+        <div class="revv-feature-icon revv-icon-violet">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+          </svg>
+        </div>
+        <h3>Strictly Typed</h3>
+        <p>Full Pyright strict compliance. Every class, method, and parameter is typed — your IDE will always guide you
+          correctly.</p>
+      </div>
+
+      <div class="revv-feature-card revv-scroll-reveal" data-delay="0.42">
+        <div class="revv-feature-icon revv-icon-orange">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3>AI-Ready (Context 7)</h3>
+        <p>Built-in support for Context 7 means AI can read our docs perfectly, helping you build bots faster and smoother than ever.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ARCHITECTURE ═══════════════════════════ -->
+<section class="revv-section revv-section-arch">
+  <div class="revv-section-container">
+    <div class="revv-section-label revv-scroll-reveal">Architecture</div>
+    <h2 class="revv-section-title revv-scroll-reveal" data-delay="0.05">How It Works</h2>
+    <p class="revv-section-desc revv-scroll-reveal" data-delay="0.1">RevvLink sits between your Discord bot and one or
+      more Lavalink servers, managing connections, players, and audio routing automatically.</p>
+
+    <div class="revv-arch-diagram revv-scroll-reveal" data-delay="0.15">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2795.3424444324164 1535.3043458099178" width="100%" ><!-- svg-source:excalidraw --><metadata></metadata><defs><style class="style-fonts">
+      @font-face { font-family: "Comic Shanns"; src: url(data:font/woff2;base64,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); }
+      @font-face { font-family: Excalifont; src: url(data:font/woff2;base64,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); }</style></defs><g stroke-linecap="round" transform="translate(10 1179.479181731475) rotate(0 235.17737561420174 121.58841892065453)"><path d="M32 0 C131.33 2.19, 228.29 1.26, 438.35 0 M32 0 C117.19 -1.21, 202.17 -1.86, 438.35 0 M438.35 0 C461.55 1.01, 469.78 10.32, 470.35 32 M438.35 0 C459.64 -0.96, 469.06 8.75, 470.35 32 M470.35 32 C471.97 88.34, 472.42 148.42, 470.35 211.18 M470.35 32 C470.98 97.53, 470.98 163.53, 470.35 211.18 M470.35 211.18 C472.2 233.38, 460.63 244.04, 438.35 243.18 M470.35 211.18 C470.3 231.96, 458.02 243.02, 438.35 243.18 M438.35 243.18 C311.41 245.15, 183.41 243.92, 32 243.18 M438.35 243.18 C332.07 243.41, 226.16 242.72, 32 243.18 M32 243.18 C8.92 244.11, -0.43 231.67, 0 211.18 M32 243.18 C12.76 242.34, 2.26 231.92, 0 211.18 M0 211.18 C0.83 159.13, 0.32 108.24, 0 32 M0 211.18 C0.49 175.34, -0.72 139.43, 0 32 M0 32 C0.76 10.02, 11.69 1.18, 32 0 M0 32 C-1.93 8.95, 10.58 -0.25, 32 0" stroke="#d3d3d3" stroke-width="2" fill="none"></path></g><g stroke-linecap="round" transform="translate(1172.385736160317 1162.7122503120836) rotate(0 235.17737561420176 119.7792850941587)"><path d="M32 0 C125.22 -3, 217.36 -2.32, 438.35 0 M32 0 C133.82 0.12, 236.72 -0.77, 438.35 0 M438.35 0 C460.21 0.57, 472.23 11.75, 470.35 32 M438.35 0 C457.9 -1.4, 469.72 8.4, 470.35 32 M470.35 32 C470.38 101.72, 469.79 166.41, 470.35 207.56 M470.35 32 C471.06 102.72, 470.39 170.91, 470.35 207.56 M470.35 207.56 C469.46 230.72, 458.82 241.43, 438.35 239.56 M470.35 207.56 C469.96 229.29, 458.65 239.43, 438.35 239.56 M438.35 239.56 C305.01 237.49, 173.37 238.27, 32 239.56 M438.35 239.56 C340.4 238.37, 242.34 237.68, 32 239.56 M32 239.56 C10.95 240.15, 1.03 227.18, 0 207.56 M32 239.56 C10.62 241.57, -0.34 229.92, 0 207.56 M0 207.56 C0.43 151.03, -0.48 92.95, 0 32 M0 207.56 C1.8 163.56, -0.01 119, 0 32 M0 32 C-0.06 11.02, 11.59 -0.15, 32 0 M0 32 C-0.94 12.44, 11.32 -0.42, 32 0" stroke="#d3d3d3" stroke-width="2" fill="none"></path></g><g stroke-linecap="round" transform="translate(2314.987693204013 1162.7742779455307) rotate(0 235.17737561420176 119.7792850941587)"><path d="M32 0 C150.07 2.48, 269.9 1.26, 438.35 0 M32 0 C183.95 -0.64, 334.81 -0.5, 438.35 0 M438.35 0 C458.01 -0.36, 471.49 11.71, 470.35 32 M438.35 0 C457.98 -1.19, 471.32 10.15, 470.35 32 M470.35 32 C470.57 86.33, 473.58 140.53, 470.35 207.56 M470.35 32 C468.27 70.91, 468.72 109.88, 470.35 207.56 M470.35 207.56 C470.87 229.19, 457.72 238.97, 438.35 239.56 M470.35 207.56 C468.57 226.86, 458.96 238.61, 438.35 239.56 M438.35 239.56 C295.74 240.65, 150.89 241.27, 32 239.56 M438.35 239.56 C302.06 238.03, 167.01 238.35, 32 239.56 M32 239.56 C10.72 238.65, -1.99 230.26, 0 207.56 M32 239.56 C12.52 237.95, -1.52 227.2, 0 207.56 M0 207.56 C0.81 150.58, 0.58 91.13, 0 32 M0 207.56 C0.54 153.54, 0.3 99.77, 0 32 M0 32 C-0.6 12.63, 9.67 0.86, 32 0 M0 32 C-1.85 11.92, 9.09 0.74, 32 0" stroke="#d3d3d3" stroke-width="2" fill="none"></path></g><g transform="translate(64.09657428518443 1254.578500386851) rotate(0 175.43294113162062 30.55654766483474)"><text x="175.43294113162062" y="42.77916673076864" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="48.890476263735586px" fill="#56a2e8" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Voice Channel</text></g><g stroke-linecap="round" transform="translate(916.9121299061783 468.49922136045586) rotate(0 173.72524016936268 56.147924026581066)"><path d="M28.07 0 C132.35 1.67, 235.06 -0.98, 319.38 0 M28.07 0 C115.24 -0.35, 203.28 0.59, 319.38 0 M319.38 0 C339.88 1.09, 347.57 11.15, 347.45 28.07 M319.38 0 C338.54 1.87, 348.59 7.93, 347.45 28.07 M347.45 28.07 C346.29 49.83, 345.72 72.03, 347.45 84.22 M347.45 28.07 C347.37 38.46, 346.77 51.58, 347.45 84.22 M347.45 84.22 C347.76 101.28, 336.57 113.93, 319.38 112.3 M347.45 84.22 C346.2 102.06, 337.21 114.14, 319.38 112.3 M319.38 112.3 C235.49 111.35, 154.7 109.86, 28.07 112.3 M319.38 112.3 C246.52 111.15, 172.32 111.5, 28.07 112.3 M28.07 112.3 C9.93 111.66, 0.29 101.62, 0 84.22 M28.07 112.3 C10.55 111.82, -1.58 105.02, 0 84.22 M0 84.22 C0.32 65.39, -1.74 48.36, 0 28.07 M0 84.22 C-0.95 70.46, -1.12 57.22, 0 28.07 M0 28.07 C1 7.44, 8.86 -1.1, 28.07 0 M0 28.07 C1.34 8.98, 8.25 -1.84, 28.07 0" stroke="#ff8383" stroke-width="2" fill="none"></path></g><g stroke-linecap="round" transform="translate(1539.971758569872 468.499221436517) rotate(0 173.72524016936268 58.19350877253089)"><path d="M29.1 0 C133.9 -0.28, 239.57 -0.23, 318.35 0 M29.1 0 C118.56 -1.01, 206.87 -1.92, 318.35 0 M318.35 0 C339.11 -0.72, 348.57 9.53, 347.45 29.1 M318.35 0 C338.13 0, 346.47 10.46, 347.45 29.1 M347.45 29.1 C348.81 40.7, 347.67 54.57, 347.45 87.29 M347.45 29.1 C348.21 44.05, 347.17 60.53, 347.45 87.29 M347.45 87.29 C345.82 106.47, 337.26 115.1, 318.35 116.39 M347.45 87.29 C348.62 108.23, 336.93 116.2, 318.35 116.39 M318.35 116.39 C225.06 116.27, 133.44 115.74, 29.1 116.39 M318.35 116.39 C258.65 115.64, 198.32 115.23, 29.1 116.39 M29.1 116.39 C9.45 114.92, 1.52 106.93, 0 87.29 M29.1 116.39 C7.41 115.04, 0.94 105.24, 0 87.29 M0 87.29 C0.44 70.28, -1.6 50.5, 0 29.1 M0 87.29 C-0.07 70.44, 0.47 52.28, 0 29.1 M0 29.1 C1.79 10.8, 9.64 1.03, 29.1 0 M0 29.1 C1.78 8.67, 10.2 1.22, 29.1 0" stroke="#56a2e8" stroke-width="2" fill="none"></path></g><g stroke-linecap="round" transform="translate(916.6434989744791 614.2799136189623) rotate(0 173.72524016936268 56.68891867591272)"><path d="M28.34 0 C117.72 0.06, 209.27 -2.16, 319.11 0 M28.34 0 C90.12 1.5, 151.97 1.64, 319.11 0 M319.11 0 C336.85 -1.69, 347.36 8.06, 347.45 28.34 M319.11 0 C338.66 -0.96, 345.67 9.51, 347.45 28.34 M347.45 28.34 C348.16 49.63, 346.05 68.48, 347.45 85.03 M347.45 28.34 C348.01 43.28, 348.49 59.8, 347.45 85.03 M347.45 85.03 C346.94 104.52, 337.93 114.45, 319.11 113.38 M347.45 85.03 C347.78 102.45, 339.72 112.01, 319.11 113.38 M319.11 113.38 C214.54 114, 106.19 112.16, 28.34 113.38 M319.11 113.38 C239.42 112.51, 158.18 111.97, 28.34 113.38 M28.34 113.38 C8.48 114.84, 2 103.99, 0 85.03 M28.34 113.38 C7.51 114.66, 1.35 101.8, 0 85.03 M0 85.03 C1.95 69.72, -0.46 54.63, 0 28.34 M0 85.03 C0.33 64.09, -0.19 43.72, 0 28.34 M0 28.34 C1.33 8.9, 10.45 -0.45, 28.34 0 M0 28.34 C-0.52 10.39, 8.81 0, 28.34 0" stroke="#39994b" stroke-width="2" fill="none"></path></g><g stroke-linecap="round" transform="translate(1546.058084031835 602.698165882452) rotate(0 173.72524016936268 58.970858662711834)"><path d="M29.49 0 C113.67 0.12, 199.91 0, 317.97 0 M29.49 0 C91.04 0.94, 153.05 0.85, 317.97 0 M317.97 0 C335.84 -1.3, 345.98 11.01, 347.45 29.49 M317.97 0 C337.04 -0.47, 348.04 8.76, 347.45 29.49 M347.45 29.49 C347.07 43.58, 346.2 58.33, 347.45 88.46 M347.45 29.49 C347.54 51.76, 348.16 74.26, 347.45 88.46 M347.45 88.46 C348.48 109.7, 335.7 118.2, 317.97 117.94 M347.45 88.46 C346.43 107, 336.19 117.18, 317.97 117.94 M317.97 117.94 C255.56 119.38, 195 118.03, 29.49 117.94 M317.97 117.94 C226.95 117.67, 135.24 117.8, 29.49 117.94 M29.49 117.94 C10.37 118.72, 1.05 108.18, 0 88.46 M29.49 117.94 C9.03 117.64, 0.14 106.38, 0 88.46 M0 88.46 C-1.16 69.84, 0.66 53.63, 0 29.49 M0 88.46 C-0.02 72.77, -0.56 55.43, 0 29.49 M0 29.49 C-1.81 9.03, 10.21 -0.42, 29.49 0 M0 29.49 C1.69 9.48, 9.23 0.64, 29.49 0" stroke="#b86200" stroke-width="2" fill="none"></path></g><g stroke-linecap="round"><g transform="translate(1270.0939793132043 670.8745181908699) rotate(0 22.295686845492924 33.50623805058149)"><path d="M0 0 C7.11 -1.46, 17.58 -0.7, 28.33 0 M0 0 C9.88 -0.19, 18.68 0.41, 28.33 0 M28.33 0 C40.82 1.57, 45.6 5.03, 44.33 16 M28.33 0 C38.02 -1.39, 42.28 3.76, 44.33 16 M44.33 16 C45.22 29.66, 43.46 39.88, 44.33 67.84 M44.33 16 C43.74 31.72, 44.65 46.56, 44.33 67.84" stroke="#39994b" stroke-width="4" fill="none"></path></g><g transform="translate(1270.0939793132043 670.8745181908699) rotate(0 22.295686845492924 33.50623805058149)"><path d="M-0.51 -1.3 L12.87 -7.45 L15.48 5.48 L1.66 -1.01" stroke="none" stroke-width="0" fill="#39994b" fill-rule="evenodd"></path><path d="M0 0 C3.2 -3.03, 8.87 -4.34, 13.39 -6.76 M0 0 C4.86 -2.38, 8.91 -4.12, 13.39 -6.76 M13.39 -6.76 C13.46 -2.35, 13.03 2.02, 13.78 5.91 M13.39 -6.76 C12.85 -3.53, 13.82 -1.15, 13.78 5.91 M13.78 5.91 C11.14 3.71, 8.82 3.72, 0 0 M13.78 5.91 C7.94 4.04, 2.7 1.83, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#39994b" stroke-width="4" fill="none"></path></g><g transform="translate(1270.0939793132043 670.8745181908699) rotate(0 22.295686845492924 33.50623805058149)"><path d="M43.82 66.55 L37.5 53.54 L52.39 53.83 L45.99 66.84" stroke="none" stroke-width="0" fill="#39994b" fill-rule="evenodd"></path><path d="M44.33 67.84 C42.12 62.73, 42.34 59.53, 38.02 54.24 M44.33 67.84 C42.81 63.13, 40.49 59.17, 38.02 54.24 M38.02 54.24 C42.78 53.63, 47.16 53.04, 50.69 54.26 M38.02 54.24 C40.4 54.55, 44.21 53.99, 50.69 54.26 M50.69 54.26 C49.71 56.49, 49.08 60.93, 44.33 67.84 M50.69 54.26 C47.84 59.91, 45.45 65.2, 44.33 67.84 M44.33 67.84 C44.33 67.84, 44.33 67.84, 44.33 67.84 M44.33 67.84 C44.33 67.84, 44.33 67.84, 44.33 67.84" stroke="#39994b" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1270.3626102449036 524.50054059079) rotate(0 40.02491824018102 106.5518290349116)"><path d="M0 0 C20.15 -1.32, 43.02 -1.64, 63.75 0 M0 0 C24.02 0.3, 48.56 0.64, 63.75 0 M63.75 0 C74.38 1.3, 81.41 5.92, 79.75 16 M63.75 0 C72.91 -0.53, 80.4 4.41, 79.75 16 M79.75 16 C79.2 61.6, 80.65 104.43, 79.75 214.22 M79.75 16 C79.85 76.59, 79.49 139.23, 79.75 214.22" stroke="#ff8383" stroke-width="4" fill="none"></path></g><g transform="translate(1270.3626102449036 524.50054059079) rotate(0 40.02491824018102 106.5518290349116)"><path d="M-1.93 -1.62 L14.45 -7.08 L14.54 7.4 L-0.22 0.54" stroke="none" stroke-width="0" fill="#ff8383" fill-rule="evenodd"></path><path d="M0 0 C3.69 -3.17, 9.46 -5.61, 13.45 -6.63 M0 0 C4.7 -2.54, 9.86 -4.85, 13.45 -6.63 M13.45 -6.63 C13.99 -3.68, 13.41 1.29, 13.73 6.04 M13.45 -6.63 C13.5 -3.97, 13.91 -0.21, 13.73 6.04 M13.73 6.04 C9.35 5.04, 4.56 2.75, 0 0 M13.73 6.04 C9.35 4.13, 4.18 2.18, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#ff8383" stroke-width="4" fill="none"></path></g><g transform="translate(1270.3626102449036 524.50054059079) rotate(0 40.02491824018102 106.5518290349116)"><path d="M77.82 212.59 L74.39 200.19 L86.87 201.97 L79.53 214.75" stroke="none" stroke-width="0" fill="#ff8383" fill-rule="evenodd"></path><path d="M79.75 214.22 C76.82 208.76, 76.03 204.01, 73.39 200.63 M79.75 214.22 C76.75 208.88, 74.26 203.89, 73.39 200.63 M73.39 200.63 C77.54 199.69, 80.67 200.88, 86.07 200.61 M73.39 200.63 C76.75 199.91, 80.39 200.36, 86.07 200.61 M86.07 200.61 C83.85 205.33, 81.21 208.73, 79.75 214.22 M86.07 200.61 C84.26 205.53, 81.65 210.37, 79.75 214.22 M79.75 214.22 C79.75 214.22, 79.75 214.22, 79.75 214.22 M79.75 214.22 C79.75 214.22, 79.75 214.22, 79.75 214.22" stroke="#ff8383" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1533.9717585698716 526.5407842975224) rotate(0 -41.58808951881326 105.86221148756476)"><path d="M0 0 C-13.11 1.61, -26.54 0.23, -65.67 0 M0 0 C-23.02 -0.7, -43.84 -0.5, -65.67 0 M-65.67 0 C-74.37 1.08, -82.96 6.68, -81.67 16 M-65.67 0 C-75.45 -1.07, -81.22 5.42, -81.67 16 M-81.67 16 C-84.22 79.78, -83.05 141.13, -81.67 212.18 M-81.67 16 C-81.95 81.59, -82.95 147.52, -81.67 212.18" stroke="#56a2e8" stroke-width="4" fill="none"></path></g><g transform="translate(1533.9717585698716 526.5407842975224) rotate(0 -41.58808951881326 105.86221148756476)"><path d="M0.49 0.32 L-12.58 4.59 L-14.32 -5.5 L1.71 0.63" stroke="none" stroke-width="0" fill="#56a2e8" fill-rule="evenodd"></path><path d="M0 0 C-2.28 2.75, -4.82 3.08, -13.52 6.49 M0 0 C-5.13 1.77, -8.55 4.14, -13.52 6.49 M-13.52 6.49 C-12.79 1.93, -14.29 -3.36, -13.66 -6.19 M-13.52 6.49 C-13.13 2.45, -13.43 -1.03, -13.66 -6.19 M-13.66 -6.19 C-11.11 -4.56, -7.71 -4.55, 0 0 M-13.66 -6.19 C-10.73 -4.96, -7.1 -2.62, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#56a2e8" stroke-width="4" fill="none"></path></g><g transform="translate(1533.9717585698716 526.5407842975224) rotate(0 -41.58808951881326 105.86221148756476)"><path d="M-81.18 212.5 L-87.21 196.75 L-76.13 199.21 L-79.97 212.81" stroke="none" stroke-width="0" fill="#56a2e8" fill-rule="evenodd"></path><path d="M-81.67 212.18 C-82.54 210.74, -83.59 206.86, -88.15 198.65 M-81.67 212.18 C-84.21 207.13, -85.24 202.67, -88.15 198.65 M-88.15 198.65 C-82.25 199.17, -78.65 198.87, -75.48 198.52 M-88.15 198.65 C-83.84 198.54, -80.25 198.88, -75.48 198.52 M-75.48 198.52 C-77.75 201.93, -79.2 203.77, -81.67 212.18 M-75.48 198.52 C-77.26 201.37, -78.31 205.48, -81.67 212.18 M-81.67 212.18 C-81.67 212.18, -81.67 212.18, -81.67 212.18 M-81.67 212.18 C-81.67 212.18, -81.67 212.18, -81.67 212.18" stroke="#56a2e8" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1540.058084031835 653.2895307203515) rotate(0 -24.714272501540336 42.555137863781994)"><path d="M0 0 C-12.1 1.33, -22.91 1.25, -33.27 0 M0 0 C-10.12 0.15, -21.69 -0.79, -33.27 0 M-33.27 0 C-44.05 0.19, -49.05 5.98, -49.27 16 M-33.27 0 C-42.63 0.48, -48.47 3.18, -49.27 16 M-49.27 16 C-48.73 39.22, -49.82 61.54, -49.27 85.43 M-49.27 16 C-49.56 29.89, -49.14 45.17, -49.27 85.43" stroke="#b86200" stroke-width="4" fill="none"></path></g><g transform="translate(1540.058084031835 653.2895307203515) rotate(0 -24.714272501540336 42.555137863781994)"><path d="M-0.21 1.42 L-13.77 5.43 L-13.2 -5.56 L-0.44 1.89" stroke="none" stroke-width="0" fill="#b86200" fill-rule="evenodd"></path><path d="M0 0 C-4.82 3.54, -8.74 5.94, -13.37 6.79 M0 0 C-3.8 2.48, -8.62 4.04, -13.37 6.79 M-13.37 6.79 C-13.1 3.79, -13.37 -0.22, -13.8 -5.88 M-13.37 6.79 C-13.44 4.55, -13.74 1.59, -13.8 -5.88 M-13.8 -5.88 C-10.91 -4.83, -8.37 -2.94, 0 0 M-13.8 -5.88 C-8.69 -3.64, -3.24 -1.58, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#b86200" stroke-width="4" fill="none"></path></g><g transform="translate(1540.058084031835 653.2895307203515) rotate(0 -24.714272501540336 42.555137863781994)"><path d="M-49.48 86.85 L-56 70.47 L-42.33 72.15 L-49.71 87.32" stroke="none" stroke-width="0" fill="#b86200" fill-rule="evenodd"></path><path d="M-49.27 85.43 C-51.74 81.64, -53.12 76.67, -55.61 71.83 M-49.27 85.43 C-50.55 81.19, -53.04 75.97, -55.61 71.83 M-55.61 71.83 C-51.47 72.54, -47.88 72.26, -42.93 71.83 M-55.61 71.83 C-52.91 72.34, -50.5 71.99, -42.93 71.83 M-42.93 71.83 C-44.41 74.49, -46.16 78.02, -49.27 85.43 M-42.93 71.83 C-45.61 76.9, -47.92 81.93, -49.27 85.43 M-49.27 85.43 C-49.27 85.43, -49.27 85.43, -49.27 85.43 M-49.27 85.43 C-49.27 85.43, -49.27 85.43, -49.27 85.43" stroke="#b86200" stroke-width="4" fill="none"></path></g></g><mask></mask><g transform="translate(938.2056034731095 486.9043347920514) rotate(0 151.21686695821836 22.795536224887606)"><text x="0" y="31.913750714842656" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36.47285795982018px" fill="#d3d3d3" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">LavaLink Node 1</text></g><g transform="translate(932.2899560039534 633.5826057078177) rotate(0 156.49093590310167 23.716202976783464)"><text x="156.49093590310167" y="33.20268416749686" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="37.94592476285356px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">LavaLink Node 3</text></g><g transform="translate(1200.8084701228088 1200.5692073410514) rotate(0 209.3065354009741 29.327870952859257)"><text x="209.306535400974" y="41.05901933400298" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="46.92459352457484px" fill="#b86200" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">RevvLink Wrapper</text></g><g transform="translate(2392.483391473765 1238.7382832491285) rotate(0 154.88546752929688 39.112638844551725)"><text x="154.88546752929688" y="54.75769438237238" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="62.58022215128272px" fill="#56a2e8" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Music Bot</text></g><g stroke-linecap="round"><g transform="translate(1526.3018152580519 1408.270820500401) rotate(0 460.03635570909523 29.1680459029713)"><path d="M0 0 C0.21 15.19, -1.01 26.43, 0 42.15 M0 0 C-0.69 14.07, -0.3 28.78, 0 42.15 M0 42.15 C0.56 54.56, 7.2 56.69, 16 58.15 M0 42.15 C-1.68 55.09, 3.47 57.05, 16 58.15 M16 58.15 C260.28 57.97, 505.03 58.49, 903.92 58.15 M16 58.15 C292.7 57.81, 568.26 57.45, 903.92 58.15 M903.92 58.15 C914.68 57.41, 918.83 54.41, 919.92 42.15 M903.92 58.15 C913.21 59.75, 918.18 50.81, 919.92 42.15 M919.92 42.15 C920.36 28.07, 920.92 12.13, 919.92 0.06 M919.92 42.15 C919.98 26.44, 920.18 9.02, 919.92 0.06" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1526.3018152580519 1408.270820500401) rotate(0 460.03635570909523 29.1680459029713)"><path d="M8.22 23.61 C5.33 17.73, 1.48 7.96, 0 0 M8.22 23.61 C4.86 15.41, 2.47 7.89, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1526.3018152580519 1408.270820500401) rotate(0 460.03635570909523 29.1680459029713)"><path d="M-8.88 23.37 C-6.31 17.71, -4.69 8.02, 0 0 M-8.88 23.37 C-6.46 15.35, -3.07 7.92, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1526.3018152580519 1408.270820500401) rotate(0 460.03635570909523 29.1680459029713)"><path d="M928.76 23.45 C925.67 17.63, 921.63 7.94, 919.92 0.06 M928.76 23.45 C925.19 15.32, 922.59 7.88, 919.92 0.06" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1526.3018152580519 1408.270820500401) rotate(0 460.03635570909523 29.1680459029713)"><path d="M911.66 23.66 C914.03 17.92, 915.45 8.16, 919.92 0.06 M911.66 23.66 C913.87 15.56, 917.05 8.05, 919.92 0.06" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g transform="translate(1730.575240245985 1475.487808533233) rotate(0 277.1998291015625 22.5)"><text x="277.1998291015625" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Handshake on initialization </text></g><g stroke-linecap="round" transform="translate(1170.324978820464 744.7184030358459) rotate(0 235.17737561420188 51.98899096258481)"><path d="M25.99 0 C126.09 0.66, 227.78 0.12, 444.36 0 M25.99 0 C160.45 -0.33, 295.39 -0.7, 444.36 0 M444.36 0 C461.23 -0.87, 470.5 8.13, 470.35 25.99 M444.36 0 C461.17 -1.36, 468.47 10.39, 470.35 25.99 M470.35 25.99 C469.42 45.19, 471.88 64.58, 470.35 77.98 M470.35 25.99 C470.42 38.87, 469.87 51.95, 470.35 77.98 M470.35 77.98 C471.1 93.64, 460.12 103.39, 444.36 103.98 M470.35 77.98 C472.53 95.8, 463.9 102.89, 444.36 103.98 M444.36 103.98 C334.85 102.35, 223.65 101.15, 25.99 103.98 M444.36 103.98 C343.32 103.14, 241.59 103.68, 25.99 103.98 M25.99 103.98 C10.26 103.65, -1.05 94.94, 0 77.98 M25.99 103.98 C8.98 102.13, -0.93 95.77, 0 77.98 M0 77.98 C-1.77 60.24, -1.05 40.03, 0 25.99 M0 77.98 C-0.5 59.16, 0.23 40.52, 0 25.99 M0 25.99 C-0.72 9.8, 9.45 -0.74, 25.99 0 M0 25.99 C-1.64 8.83, 10.61 0.4, 25.99 0" stroke="#d3d3d3" stroke-width="2" fill="none"></path></g><g transform="translate(1201.440038414736 762.4048798042625) rotate(0 204.56146240234375 35.764754493880446)"><text x="204.56146240234375" y="50.07065629143265" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="57.22360719020874px" fill="#e28af8" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">LavaLink Pool</text></g><g transform="translate(991.7609019668673 529.2208444092621) rotate(0 101.4659652709961 22.5)"><text x="101.4659652709961" y="31.716" font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Asia Region</text></g><g transform="translate(1625.9591961311942 535.0688372607892) rotate(0 89.0999755859375 22.5)"><text x="89.0999755859375" y="31.716" font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">US Region</text></g><g transform="translate(1587.0633950853164 669.3310977162951) rotate(0 136.7967194812129 20.78747211004685)"><text x="136.7967194812129" y="29.30202068632203" font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="33.25995537607495px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">S-America Region</text></g><g transform="translate(963.0641884260565 676.106703540574) rotate(0 123.36980438232422 22.26658964536)"><text x="123.36980438232422" y="31.386984764099456" font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="35.626543432576px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic"> Africa Region</text></g><g transform="translate(1554.0250633286048 488.0253676125796) rotate(0 156.7371251029358 23.753512952599436)"><text x="156.73712510293592" y="33.2549181336392" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="38.00562072415909px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">LavaLink Node 2</text></g><g transform="translate(1570.9909985525785 621.159872697137) rotate(0 148.90830854820297 22.567055721651485)"><text x="148.90830854820297" y="31.593878010312054" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36.107289154642345px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">LavaLink Node 4</text></g><g transform="translate(1732.5462258133246 924.570576738) rotate(0 93.83987904991614 68.37198585318328)"><text x="93.83987904991622" y="31.90692673148553" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36.46505912169775px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Handshake</text><text x="93.83987904991622" y="77.48825063360772" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36.46505912169775px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">on</text><text x="93.83987904991622" y="123.0695745357299" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36.46505912169775px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">startup </text></g><g transform="translate(1780.7107625956476 1247.9293590933646) rotate(0 227.00717039926076 49.14413478709861)"><text x="227.00717039926073" y="34.400894350969054" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="39.315307829678915px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">join / play command  </text><text x="227.00717039926073" y="83.54502913806769" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="39.315307829678915px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic"></text></g><g transform="translate(897.5948834064739 919.6716010274663) rotate(0 91.6749345504245 73.27096091925)"><text x="91.67493455042451" y="34.19311509564999" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="39.07784582359999px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Creates</text><text x="91.67493455042451" y="83.04042237514999" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="39.07784582359999px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">a Player</text><text x="91.67493455042451" y="131.88772965464997" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="39.07784582359999px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">instance</text></g><g stroke-linecap="round"><g transform="translate(1164.3249788204641 796.6073939984307) rotate(0 -34.54921404326865 226.23529539587076)"><path d="M0 0 C-14.02 -1.52, -31.88 1.09, -54.75 0 M0 0 C-21.21 -0.27, -41.99 -0.32, -54.75 0 M-54.75 0 C-64.56 -1.93, -71.38 4.41, -70.75 16 M-54.75 0 C-63.47 1.07, -72.38 3.68, -70.75 16 M-70.75 16 C-69.19 164.42, -69.51 310.24, -70.75 436.43 M-70.75 16 C-71.17 145.54, -71.41 273.83, -70.75 436.43 M-70.75 436.43 C-70.91 445.24, -66.79 452.43, -54.75 452.43 M-70.75 436.43 C-72.53 448.38, -63.89 453.14, -54.75 452.43 M-54.75 452.43 C-32.6 452.75, -10.07 452.65, 2.06 452.43 M-54.75 452.43 C-35 453.15, -13.97 453.12, 2.06 452.43" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1164.3249788204641 796.6073939984307) rotate(0 -34.54921404326865 226.23529539587076)"><path d="M1.12 0.44 L-15 4.79 L-15.28 -6.78 L-0.99 -0.52" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0 0 C-2.5 0.8, -7.95 4.62, -13.56 6.41 M0 0 C-5.44 2.25, -10.57 4.66, -13.56 6.41 M-13.56 6.41 C-14.05 3.14, -12.89 -3.18, -13.63 -6.26 M-13.56 6.41 C-13.45 3.8, -13.04 0.71, -13.63 -6.26 M-13.63 -6.26 C-11.71 -3.92, -5.57 -3.04, 0 0 M-13.63 -6.26 C-10.92 -4.65, -7.74 -2.74, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1164.3249788204641 796.6073939984307) rotate(0 -34.54921404326865 226.23529539587076)"><path d="M3.18 452.87 L-12.79 457.53 L-13.36 445.96 L1.07 451.91" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M2.06 452.43 C-0.4 453.32, -5.8 457.23, -11.35 459.15 M2.06 452.43 C-3.32 454.8, -8.4 457.32, -11.35 459.15 M-11.35 459.15 C-11.94 455.88, -10.88 449.56, -11.71 446.48 M-11.35 459.15 C-11.3 456.54, -10.96 453.45, -11.71 446.48 M-11.71 446.48 C-9.75 448.75, -3.58 449.55, 2.06 452.43 M-11.71 446.48 C-8.96 448.02, -5.76 449.85, 2.06 452.43 M2.06 452.43 C2.06 452.43, 2.06 452.43, 2.06 452.43 M2.06 452.43 C2.06 452.43, 2.06 452.43, 2.06 452.43" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1648.74048738872 1298.2631991183566) rotate(0 330.1236029076465 -1.0423108406731103)"><path d="M0 0 C196.78 -2.29, 392.12 -2.95, 660.25 -0.68 M0 0 C147.75 -1.17, 295.4 -1.66, 660.25 -0.68" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1648.74048738872 1298.2631991183566) rotate(0 330.1236029076465 -1.0423108406731103)"><path d="M-1.91 1.51 L13.67 -6.71 L12.17 7.59 L0.18 -1.04" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0 0 C4.68 -1.46, 6.64 -4.22, 13.57 -6.4 M0 0 C2.96 -1.34, 5.69 -3.41, 13.57 -6.4 M13.57 -6.4 C12.51 -2.6, 13.67 0.15, 13.62 6.28 M13.57 -6.4 C13.07 -1.91, 13.04 2.95, 13.62 6.28 M13.62 6.28 C9.04 4.91, 1.93 0.94, 0 0 M13.62 6.28 C9.15 3.88, 3.75 1.89, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(621.9873266141601 1301.3177272898824) rotate(0 -67.81628769287835 -0.04548497054872769)"><path d="M0 0 C-30.45 -0.25, -56.6 -0.53, -135.63 -0.35 M0 0 C-53.46 0.72, -107.06 0.04, -135.63 -0.35" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(621.9873266141601 1301.3177272898824) rotate(0 -67.81628769287835 -0.04548497054872769)"><path d="M0.3 -1.29 L-14.81 6.22 L-14.73 -6.46 L0.81 0.62" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0 0 C-4.24 1.33, -5.32 2.5, -13.63 6.27 M0 0 C-5.06 2.89, -10.2 4.97, -13.63 6.27 M-13.63 6.27 C-14.02 1.07, -12.85 -3.46, -13.56 -6.41 M-13.63 6.27 C-13.17 2.62, -14.2 -0.23, -13.56 -6.41 M-13.56 -6.41 C-8.55 -3.49, -5.07 -3.49, 0 0 M-13.56 -6.41 C-10.29 -4.22, -6.76 -2.9, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(621.9873266141601 1301.3177272898824) rotate(0 -67.81628769287835 -0.04548497054872769)"><path d="M-135.33 -1.64 L-123.14 -6.58 L-123.28 6.1 L-134.83 0.27" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M-135.63 -0.35 C-134.24 -1.6, -129.57 -3.04, -121.96 -6.53 M-135.63 -0.35 C-129.77 -2.5, -124.04 -5.36, -121.96 -6.53 M-121.96 -6.53 C-122.45 -2.19, -121.36 2.82, -122.12 6.15 M-121.96 -6.53 C-121.53 -3.54, -122.61 0.24, -122.12 6.15 M-122.12 6.15 C-126.05 4.61, -131.43 0.39, -135.63 -0.35 M-122.12 6.15 C-126.33 4.63, -130.28 2.39, -135.63 -0.35 M-135.63 -0.35 C-135.63 -0.35, -135.63 -0.35, -135.63 -0.35 M-135.63 -0.35 C-135.63 -0.35, -135.63 -0.35, -135.63 -0.35" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1646.6797300488677 788.9794272395586) rotate(0 35.40827931061335 220.86193817618073)"><path d="M0 0 C15.34 -0.38, 29.11 -1.41, 54.39 0 M0 0 C20.13 -0.61, 41.5 -0.23, 54.39 0 M54.39 0 C67.02 0.69, 69.13 6.08, 70.39 16 M54.39 0 C66.13 -0.4, 71.46 4.14, 70.39 16 M70.39 16 C68.71 114.78, 68.48 216.59, 70.39 426.15 M70.39 16 C70.62 121.21, 70.86 227.45, 70.39 426.15 M70.39 426.15 C70.23 437.28, 63.34 443.66, 54.39 442.15 M70.39 426.15 C72.59 436.86, 66.07 441.31, 54.39 442.15 M54.39 442.15 C36.2 441.8, 18.71 442.38, 2.06 442.15 M54.39 442.15 C33.72 442.25, 14.79 442.76, 2.06 442.15" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1646.6797300488677 788.9794272395586) rotate(0 35.40827931061335 220.86193817618073)"><path d="M0.38 0.51 L14.78 -5.9 L13.38 7.96 L1.08 0.89" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0 0 C4.41 -1.76, 7.69 -4.24, 13.46 -6.61 M0 0 C4.85 -3.09, 10.65 -5.28, 13.46 -6.61 M13.46 -6.61 C14.08 -0.98, 13.49 4.07, 13.72 6.06 M13.46 -6.61 C13.14 -3.65, 12.89 -0.63, 13.72 6.06 M13.72 6.06 C7.43 3.11, 2.16 1.48, 0 0 M13.72 6.06 C8.63 4.7, 5.55 2.18, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1646.6797300488677 788.9794272395586) rotate(0 35.40827931061335 220.86193817618073)"><path d="M2.44 442.65 L17.1 436.83 L15.17 450.68 L3.14 443.04" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M2.06 442.15 C6.54 440.54, 9.89 438.21, 15.79 436.11 M2.06 442.15 C7.01 439.28, 12.92 437.3, 15.79 436.11 M15.79 436.11 C16.19 441.74, 15.39 446.79, 15.51 448.79 M15.79 436.11 C15.33 439.07, 14.95 442.09, 15.51 448.79 M15.51 448.79 C9.32 445.62, 4.15 443.77, 2.06 442.15 M15.51 448.79 C10.51 447.23, 7.52 444.53, 2.06 442.15 M2.06 442.15 C2.06 442.15, 2.06 442.15, 2.06 442.15 M2.06 442.15 C2.06 442.15, 2.06 442.15, 2.06 442.15" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round" transform="translate(1188.2281420475213 958.7514317150071) rotate(0 218.05811886121955 39.829495233285)"><path d="M19.91 0 C127.89 -0.19, 234.41 -0.98, 416.2 0 M19.91 0 C108.5 -2.08, 197.98 -2.11, 416.2 0 M416.2 0 C427.67 0.18, 436.48 6.02, 436.12 19.91 M416.2 0 C430.04 2.04, 435.88 7.26, 436.12 19.91 M436.12 19.91 C436.35 31.68, 437.54 46.69, 436.12 59.74 M436.12 19.91 C435.25 31.61, 436.42 44.59, 436.12 59.74 M436.12 59.74 C434.93 72.24, 428.05 81.42, 416.2 79.66 M436.12 59.74 C437.04 72.3, 429.37 79.23, 416.2 79.66 M416.2 79.66 C272.74 78.4, 130.12 77.21, 19.91 79.66 M416.2 79.66 C309.32 80.07, 202.84 80.14, 19.91 79.66 M19.91 79.66 C6.6 80.88, 1.75 73.91, 0 59.74 M19.91 79.66 C5.18 80.2, -0.99 72.2, 0 59.74 M0 59.74 C1.91 48.93, -1.12 34.07, 0 19.91 M0 59.74 C-1.12 50.98, -0.93 41.2, 0 19.91 M0 19.91 C-1.91 8.03, 5.87 -1.88, 19.91 0 M0 19.91 C-0.67 6.29, 8.12 -1.66, 19.91 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g stroke-linecap="round"><g transform="translate(1408.1902198387156 1053.5755852585494) rotate(0 -0.5163833164500602 51.56833252676711)"><path d="M0 0 C-0.06 28.58, -1.7 56.65, -0.73 103.14 M0 0 C-0.44 24.33, -0.62 48.07, -0.73 103.14" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1408.1902198387156 1053.5755852585494) rotate(0 -0.5163833164500602 51.56833252676711)"><path d="M0.32 0.32 L7.25 13.6 L-5.29 13.28 L-0.62 0.94" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0 0 C1.59 3.4, 2.26 6.39, 6.13 13.69 M0 0 C1.49 3.59, 2.89 6.74, 6.13 13.69 M6.13 13.69 C3.33 13.61, -0.7 12.6, -6.55 13.5 M6.13 13.69 C1.21 13.12, -3.73 13.28, -6.55 13.5 M-6.55 13.5 C-4.96 10.67, -4.46 5.21, 0 0 M-6.55 13.5 C-5.43 9.96, -2.82 6.78, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1408.1902198387156 1053.5755852585494) rotate(0 -0.5163833164500602 51.56833252676711)"><path d="M-0.41 103.45 L-5.9 89.43 L6.91 89.34 L-1.34 104.08" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M-0.73 103.14 C-2.77 98.75, -5.63 93.99, -7.03 89.52 M-0.73 103.14 C-1.98 100.46, -3.44 97.33, -7.03 89.52 M-7.03 89.52 C-2.99 89.32, -0.17 88.37, 5.65 89.56 M-7.03 89.52 C-2.37 89.16, 2.26 89.41, 5.65 89.56 M5.65 89.56 C3.96 94.03, 0.94 95.93, -0.73 103.14 M5.65 89.56 C3.42 93.39, 2.55 97.49, -0.73 103.14 M-0.73 103.14 C-0.73 103.14, -0.73 103.14, -0.73 103.14 M-0.73 103.14 C-0.73 103.14, -0.73 103.14, -0.73 103.14" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1405.4023544346658 854.6963849610155) rotate(0 0.3788649546738725 48.527523376995816)"><path d="M0 0 C0.52 26.9, 0.79 49.28, 0.78 97.06 M0 0 C0.12 36.19, -0.44 71.51, 0.78 97.06" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1405.4023544346658 854.6963849610155) rotate(0 0.3788649546738725 48.527523376995816)"><path d="M-0.25 -1.83 L6.05 15.16 L-4.86 15.21 L1.01 0.74" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0 0 C2.19 4.58, 3.95 5.74, 6.5 13.52 M0 0 C2.33 5.13, 4.1 9.57, 6.5 13.52 M6.5 13.52 C4.37 14, 0.45 12.77, -6.18 13.67 M6.5 13.52 C3.8 14.08, 0.7 13.14, -6.18 13.67 M-6.18 13.67 C-3.58 10.99, -1.32 4.32, 0 0 M-6.18 13.67 C-3.94 10.5, -1.99 5.41, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1405.4023544346658 854.6963849610155) rotate(0 0.3788649546738725 48.527523376995816)"><path d="M0.53 95.22 L-6.37 85.28 L8.07 84.83 L1.79 97.79" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0.78 97.06 C-0.4 94.47, -2.11 88.54, -5.92 83.64 M0.78 97.06 C-1.79 92.08, -4.92 86.49, -5.92 83.64 M-5.92 83.64 C-2.34 83.91, -0.53 82.57, 6.75 83.29 M-5.92 83.64 C-3.06 83.96, -0.59 82.92, 6.75 83.29 M6.75 83.29 C5.84 88.72, 4.5 90.18, 0.78 97.06 M6.75 83.29 C5.53 87.95, 4.05 90.62, 0.78 97.06 M0.78 97.06 C0.78 97.06, 0.78 97.06, 0.78 97.06 M0.78 97.06 C0.78 97.06, 0.78 97.06, 0.78 97.06" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round" transform="translate(628.9873266141601 1175.7364182451156) rotate(0 176.54509123550736 125.68130904476669)"><path d="M32 0 C116.04 1.52, 202.01 -0.08, 321.09 0 M32 0 C119.12 0.29, 204.48 0.35, 321.09 0 M321.09 0 C340.48 0.7, 351.99 12.53, 353.09 32 M321.09 0 C343.6 1.9, 351.3 10.91, 353.09 32 M353.09 32 C353.02 93.98, 355.64 151.63, 353.09 219.36 M353.09 32 C355.56 75.93, 353.91 121.36, 353.09 219.36 M353.09 219.36 C351.52 239.89, 341.5 252.12, 321.09 251.36 M353.09 219.36 C352.31 240.43, 344.09 250.84, 321.09 251.36 M321.09 251.36 C248.41 252.05, 174.67 253.03, 32 251.36 M321.09 251.36 C226.75 252.42, 132.64 252.1, 32 251.36 M32 251.36 C9.18 249.6, -1.28 240.76, 0 219.36 M32 251.36 C8.89 251.8, 1.83 238.78, 0 219.36 M0 219.36 C-0.4 168.67, 1.76 116.11, 0 32 M0 219.36 C2.38 177.49, 2.6 134.65, 0 32 M0 32 C1.66 8.76, 8.91 -1.04, 32 0 M0 32 C-1.2 11.19, 9.16 -2.09, 32 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g stroke-linecap="round"><g transform="translate(1166.385736160317 1301.3972370868985) rotate(0 -88.6541135375711 0.3524778426657349)"><path d="M0 0 C-49.88 1.66, -103.06 0.69, -177.31 -0.08 M0 0 C-56.57 0.23, -114.67 -0.48, -177.31 -0.08" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1166.385736160317 1301.3972370868985) rotate(0 -88.6541135375711 0.3524778426657349)"><path d="M1.94 1.77 L-13.3 7.24 L-13.06 -7.32 L-0.5 1.86" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M0 0 C-3.38 2.05, -9.19 3.17, -13.56 6.41 M0 0 C-3.74 2.69, -8.61 4.26, -13.56 6.41 M-13.56 6.41 C-13.06 2.12, -13.12 0.07, -13.63 -6.27 M-13.56 6.41 C-13.69 2.78, -13.31 -1.69, -13.63 -6.27 M-13.63 -6.27 C-8.38 -5.32, -5.45 -1.76, 0 0 M-13.63 -6.27 C-9.27 -4.34, -4.46 -1.74, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(1166.385736160317 1301.3972370868985) rotate(0 -88.6541135375711 0.3524778426657349)"><path d="M-175.37 1.69 L-163.46 -5.61 L-163.14 5.18 L-177.8 1.78" stroke="none" stroke-width="0" fill="#d3d3d3" fill-rule="evenodd"></path><path d="M-177.31 -0.08 C-172.86 -1.91, -170.93 -4.43, -163.73 -6.45 M-177.31 -0.08 C-172.21 -1.44, -168.28 -4.01, -163.73 -6.45 M-163.73 -6.45 C-163.37 -4.34, -163.4 0.01, -163.7 6.23 M-163.73 -6.45 C-163.75 -1.73, -163.33 2.15, -163.7 6.23 M-163.7 6.23 C-166.51 3.48, -171.7 3.28, -177.31 -0.08 M-163.7 6.23 C-168.36 3.75, -172.68 2.13, -177.31 -0.08 M-177.31 -0.08 C-177.31 -0.08, -177.31 -0.08, -177.31 -0.08 M-177.31 -0.08 C-177.31 -0.08, -177.31 -0.08, -177.31 -0.08" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g transform="translate(709.1323475726294 1183.9236487987532) rotate(0 84.07154778899314 31.00846802197111)"><text x="84.07154778899316" y="43.41185523075953" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="49.61354883515375px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Player</text></g><g transform="translate(1296.2762712398023 970.4043335711851) rotate(0 114.05616480053084 28.802079575279777)"><text x="114.05616480053084" y="40.322911405391686" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="46.083327320447644px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">LFU Cache</text></g><g stroke-linecap="round" transform="translate(771.5696128263874 10) rotate(0 631.0396584132129 166.91923135028367)"><path d="M32 0 C313.29 -0.95, 595.53 0.24, 1230.08 0 M32 0 C435.97 -1.78, 839.82 -1.46, 1230.08 0 M1230.08 0 C1252.43 0.26, 1263.55 9.93, 1262.08 32 M1230.08 0 C1249.58 -0.08, 1262.9 10.02, 1262.08 32 M1262.08 32 C1262.68 127.24, 1263.88 223.8, 1262.08 301.84 M1262.08 32 C1263.63 130.66, 1264.52 228.67, 1262.08 301.84 M1262.08 301.84 C1263.84 323.05, 1250.28 335.5, 1230.08 333.84 M1262.08 301.84 C1262.69 324.69, 1250.32 334, 1230.08 333.84 M1230.08 333.84 C843.83 328.45, 457.61 329.84, 32 333.84 M1230.08 333.84 C792.2 336.14, 354.33 336.01, 32 333.84 M32 333.84 C10.13 332.54, 0.51 324, 0 301.84 M32 333.84 C9.68 335.27, -0.3 321.72, 0 301.84 M0 301.84 C0.86 244.82, -0.37 187.51, 0 32 M0 301.84 C1.74 221.87, 0.96 141.14, 0 32 M0 32 C-0.8 10.85, 11.28 -1.87, 32 0 M0 32 C0.58 8.48, 10.61 2.03, 32 0" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(837.4773065768752 78.74133084194142) rotate(0 69.29995727539062 22.5)"><text x="0" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">YouTube</text></g><g transform="translate(1163.7719905020072 80.44723394138896) rotate(0 79.199951171875 22.5)"><text x="0" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">YT Music</text></g><g transform="translate(1509.866662399826 76.54787168116502) rotate(0 69.29995727539051 22.5)"><text x="69.29995727539062" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Spotify</text></g><g transform="translate(945.972125115195 167.1311361440579) rotate(0 108.89993286132812 22.5)"><text x="108.89993286132812" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Apple Music</text></g><g transform="translate(1322.1718928874297 167.1311363903812) rotate(0 108.89993286132812 22.5)"><text x="108.89993286132812" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">SoundCloud </text></g><g transform="translate(1836.1613462523421 76.54787113619489) rotate(0 59.39996337890625 22.5)"><text x="59.39996337890625" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Deezer</text></g><g transform="translate(837.4773069959606 255.52094362891347) rotate(0 59.39996337890625 22.5)"><text x="0" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Twitch</text></g><g transform="translate(1184.8940273948415 249.64202436129438) rotate(0 79.199951171875 22.5)"><text x="79.199951171875" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Bandcamp</text></g><g transform="translate(1659.2555272644242 160.00080327847496) rotate(0 108.89993286132812 22.5)"><text x="108.89993286132812" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Direct URL </text></g><g transform="translate(1478.8411191644875 249.13442908679605) rotate(0 118.7999267578125 22.5)"><text x="118.7999267578125" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Yandex Music</text></g><g transform="translate(1821.00261263247 247.60472007834113) rotate(0 79.199951171875 22.5)"><text x="79.199951171875" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">VK Music</text></g><g stroke-linecap="round"><g transform="translate(1090.537370075541 462.49922136045586) rotate(0 -0.10553083224510829 -55.83037932994428)"><path d="M0 0 C0.12 -25.55, 1.2 -49.02, 0.25 -111.66 M0 0 C-1.29 -28.14, -1.02 -58.18, 0.25 -111.66" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(1090.537370075541 462.49922136045586) rotate(0 -0.10553083224510829 -55.83037932994428)"><path d="M-1.09 -1.31 L-5.94 -12.26 L5.89 -13.89 L0.15 1.65" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M0 0 C-1.22 -3.64, -1.83 -5.69, -6.21 -13.66 M0 0 C-2.19 -3.02, -3.64 -7.49, -6.21 -13.66 M-6.21 -13.66 C-1.97 -13.32, -0.05 -12.78, 6.47 -13.53 M-6.21 -13.66 C-2.08 -13.87, 3.02 -13.62, 6.47 -13.53 M6.47 -13.53 C5.52 -9.62, 2.88 -7.06, 0 0 M6.47 -13.53 C5.51 -11, 2.75 -6.73, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(1090.537370075541 462.49922136045586) rotate(0 -0.10553083224510829 -55.83037932994428)"><path d="M-0.84 -112.97 L6.58 -96.55 L-6.95 -98.55 L0.4 -110.01" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M0.25 -111.66 C1.79 -109.16, 3.9 -105.12, 6.31 -97.94 M0.25 -111.66 C1.37 -107.68, 3.09 -105.1, 6.31 -97.94 M6.31 -97.94 C4.34 -97.87, 0.06 -97.42, -6.37 -98.2 M6.31 -97.94 C1.44 -98.11, -2.46 -97.98, -6.37 -98.2 M-6.37 -98.2 C-3.92 -101.13, -3.22 -105.45, 0.25 -111.66 M-6.37 -98.2 C-4.37 -102.02, -3.99 -104.22, 0.25 -111.66 M0.25 -111.66 C0.25 -111.66, 0.25 -111.66, 0.25 -111.66 M0.25 -111.66 C0.25 -111.66, 0.25 -111.66, 0.25 -111.66" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1713.5969987392348 462.499221436517) rotate(0 -0.18323367555353798 -55.83037936797484)"><path d="M0 0 C1.67 -30.31, -2.05 -64.05, -0.35 -111.66 M0 0 C-0.28 -41.33, 0.24 -83.04, -0.35 -111.66" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(1713.5969987392348 462.499221436517) rotate(0 -0.18323367555353798 -55.83037936797484)"><path d="M1.11 1.74 L-7.22 -11.78 L7.93 -12.56 L-1.59 -0.08" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M0 0 C-0.52 -2.78, -5.07 -8.16, -6.47 -13.53 M0 0 C-2.6 -5.15, -4.49 -10.6, -6.47 -13.53 M-6.47 -13.53 C-2.34 -13.41, 2.29 -13.31, 6.21 -13.66 M-6.47 -13.53 C-2.81 -13.57, -0.34 -13.98, 6.21 -13.66 M6.21 -13.66 C5.81 -10.73, 3.71 -4.65, 0 0 M6.21 -13.66 C4.67 -9.81, 1.37 -4.14, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(1713.5969987392348 462.499221436517) rotate(0 -0.18323367555353798 -55.83037936797484)"><path d="M0.76 -109.92 L5.37 -96.38 L-4.83 -96.91 L-1.94 -111.74" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M-0.35 -111.66 C2.8 -106.83, 1.92 -104.53, 6.12 -98.13 M-0.35 -111.66 C1.77 -106.85, 4.64 -102.34, 6.12 -98.13 M6.12 -98.13 C1.08 -97.98, -3.45 -97.8, -6.56 -98 M6.12 -98.13 C3.2 -98.05, -0.93 -98.39, -6.56 -98 M-6.56 -98 C-3.22 -103.84, -1.35 -106.5, -0.35 -111.66 M-6.56 -98 C-3.82 -103.33, -2.95 -106.85, -0.35 -111.66 M-0.35 -111.66 C-0.35 -111.66, -0.35 -111.66, -0.35 -111.66 M-0.35 -111.66 C-0.35 -111.66, -0.35 -111.66, -0.35 -111.66" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(865.4682720395117 350.83846270056733) rotate(0 22.58761346748372 160.2339804740663)"><path d="M0 0 C2.98 68.96, 2.57 138.27, 0 304.03 M0 0 C1.36 112.24, 2.31 224.83, 0 304.03 M0 304.03 C0.14 313.22, 7.24 318.55, 16 320.03 M0 304.03 C0.45 316.06, 6.39 319.94, 16 320.03 M16 320.03 C22.02 319.75, 29.89 319.02, 45.18 320.03 M16 320.03 C26.33 320.05, 35.63 321, 45.18 320.03" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(865.4682720395117 350.83846270056733) rotate(0 22.58761346748372 160.2339804740663)"><path d="M-0.64 1.28 L5.41 13.49 L-5.62 15.28 L1.31 -1.55" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M0 0 C2.56 3.47, 3.6 7.29, 6.47 13.53 M0 0 C2.12 4.54, 5.5 9.49, 6.47 13.53 M6.47 13.53 C1.64 13.94, -0.56 14.31, -6.21 13.65 M6.47 13.53 C2.16 13.47, -1.22 14.03, -6.21 13.65 M-6.21 13.65 C-5.08 10.66, -3.38 6.16, 0 0 M-6.21 13.65 C-3.64 8.29, -0.88 2.53, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(865.4682720395117 350.83846270056733) rotate(0 22.58761346748372 160.2339804740663)"><path d="M44.54 321.31 L30.86 327 L31.87 316.01 L46.49 318.48" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M45.18 320.03 C43.22 322.01, 39.81 324.36, 31.92 327.05 M45.18 320.03 C39.94 322.28, 36 324.8, 31.92 327.05 M31.92 327.05 C30.88 323.42, 32.37 319.86, 31.28 314.39 M31.92 327.05 C31.29 323.24, 31.48 320.01, 31.28 314.39 M31.28 314.39 C34.32 315.93, 37.84 316.01, 45.18 320.03 M31.28 314.39 C36.7 316.62, 42.47 318.41, 45.18 320.03 M45.18 320.03 C45.18 320.03, 45.18 320.03, 45.18 320.03 M45.18 320.03 C45.18 320.03, 45.18 320.03, 45.18 320.03" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(1939.2846623968983 350.83846270056733) rotate(0 -19.776009852016387 155.948685355216)"><path d="M0 0 C0.14 60.27, -0.58 121.49, 0.22 294.72 M0 0 C-0.66 112.76, -0.08 227.2, 0.22 294.72 M0.22 294.72 C-1.54 307.14, -6.34 310.56, -15.78 310.72 M0.22 294.72 C0.26 306.26, -4.02 309.35, -15.78 310.72 M-15.78 310.72 C-21.17 311.82, -25.32 312.7, -39.78 310.72 M-15.78 310.72 C-21.39 311.34, -28.98 311.23, -39.78 310.72" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(1939.2846623968983 350.83846270056733) rotate(0 -19.776009852016387 155.948685355216)"><path d="M0.17 -1.53 L6.97 14.87 L-8.19 11.84 L-1.23 -0.85" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M0 0 C0.98 2.8, 1.49 6.59, 6.33 13.6 M0 0 C2.35 4.52, 5.28 10.75, 6.33 13.6 M6.33 13.6 C3.54 13.54, 1.43 14.12, -6.35 13.59 M6.33 13.6 C3.43 13.53, 0.57 13.96, -6.35 13.59 M-6.35 13.59 C-4.26 9.42, -0.25 2.3, 0 0 M-6.35 13.59 C-4.63 8.31, -1.65 3.42, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g><g transform="translate(1939.2846623968983 350.83846270056733) rotate(0 -19.776009852016387 155.948685355216)"><path d="M-39.6 309.2 L-25.3 306.18 L-28.28 315.83 L-41 309.88" stroke="none" stroke-width="0" fill="#ff8dbc" fill-rule="evenodd"></path><path d="M-39.78 310.72 C-37.3 309.52, -35.25 309.34, -25.95 304.91 M-39.78 310.72 C-34.48 307.75, -28.65 306.51, -25.95 304.91 M-25.95 304.91 C-26.05 307.61, -25.57 310.87, -26.43 317.58 M-25.95 304.91 C-26 307.98, -25.94 311.45, -26.43 317.58 M-26.43 317.58 C-32.16 316.11, -35.94 311.66, -39.78 310.72 M-26.43 317.58 C-31.78 314.73, -35.86 312.25, -39.78 310.72 M-39.78 310.72 C-39.78 310.72, -39.78 310.72, -39.78 310.72 M-39.78 310.72 C-39.78 310.72, -39.78 310.72, -39.78 310.72" stroke="#ff8dbc" stroke-width="4" fill="none"></path></g></g><mask></mask><g transform="translate(1275.693902113 357.67840650889013) rotate(0 128.69992065429688 22.5)"><text x="128.69992065429688" y="31.5" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="36px" fill="#ff8dbc" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Music Sources</text></g><g transform="translate(645.0236233959472 1246.1415601766817) rotate(0 161.52587295119804 81.5803821241957)"><text x="0" y="28.553133743468486" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="32.63215284967827px" fill="#a98d84" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">- Queue System</text><text x="0" y="69.34332480556633" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="32.63215284967827px" fill="#a98d84" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">- Filters System</text><text x="0" y="110.13351586766416" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="32.63215284967827px" fill="#a98d84" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">- DAVE Protocol</text><text x="0" y="150.923706929762" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="32.63215284967827px" fill="#a98d84" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">- State Management</text></g><g transform="translate(1195.7862859850334 1266.1471692092055) rotate(0 211.78035300140675 47.558293703174456)"><text x="0" y="22.193870394814738" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="25.3644233083597px" fill="#a98d84" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">- Penalty Based Node Balancing</text><text x="0" y="53.89939953026436" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="25.3644233083597px" fill="#a98d84" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">- Auto Node Shifter</text><text x="0" y="85.604928665714" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="25.3644233083597px" fill="#a98d84" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">- Silent Node Reconnecting</text></g><g stroke-linecap="round"><g transform="translate(245.07737561420169 1428.6560195727839) rotate(0 528.9732813294447 10.238189323395602)"><path d="M0 0 C0.3 8.32, -0.46 14.2, 0 23.49 M0 0 C-0.68 6.47, -0.29 14.04, 0 23.49 M0 23.49 C0.55 34.57, 5.6 38.6, 16 39.49 M0 23.49 C-1.45 35.96, 3.26 40.02, 16 39.49 M16 39.49 C372.51 41.39, 729.24 41.25, 1041.7 39.49 M16 39.49 C387.72 37.59, 759.62 37.52, 1041.7 39.49 M1041.7 39.49 C1053.76 39.55, 1056.72 34.4, 1057.7 23.49 M1041.7 39.49 C1052.63 40.9, 1059.4 35.38, 1057.7 23.49 M1057.7 23.49 C1057.13 8.51, 1059.06 -6.09, 1057.7 -20.39 M1057.7 23.49 C1057.97 6.3, 1058.96 -9.14, 1057.7 -20.39" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(245.07737561420169 1428.6560195727839) rotate(0 528.9732813294447 10.238189323395602)"><path d="M6.58 18.61 C4.55 14.07, 1.8 7.17, 0 0 M6.58 18.61 C4.2 12.07, 2.55 6.62, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(245.07737561420169 1428.6560195727839) rotate(0 528.9732813294447 10.238189323395602)"><path d="M-6.92 18.49 C-4.85 14.1, -3.5 7.23, 0 0 M-6.92 18.49 C-5.13 12.02, -2.61 6.61, 0 0" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(245.07737561420169 1428.6560195727839) rotate(0 528.9732813294447 10.238189323395602)"><path d="M1067.51 2.61 C1064.46 -3.28, 1060.72 -11.53, 1057.7 -20.39 M1067.51 2.61 C1064.16 -5.31, 1061.52 -12.1, 1057.7 -20.39" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g><g transform="translate(245.07737561420169 1428.6560195727839) rotate(0 528.9732813294447 10.238189323395602)"><path d="M1050.43 3.53 C1052.57 -2.49, 1054.02 -11.02, 1057.7 -20.39 M1050.43 3.53 C1052.36 -4.63, 1055 -11.7, 1057.7 -20.39" stroke="#d3d3d3" stroke-width="4" fill="none"></path></g></g><mask></mask><g transform="translate(582.6567822684542 1484.1621973092897) rotate(0 199.0750602441554 20.571074250314155)"><text x="199.07506024415545" y="28.79950395043984" font-family="Comic Shanns, monospace, Segoe UI Emoji" font-size="32.91371880050267px" fill="#d3d3d3" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Event Driven Handshake</text></g></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CTA SECTION ═══════════════════════════ -->
+<section class="revv-section revv-section-cta">
+  <div class="revv-section-container">
+    <div class="revv-cta-card revv-scroll-reveal">
+      <div class="revv-cta-glow"></div>
+      <h2 class="revv-cta-title">Ready to Build?</h2>
+      <p class="revv-cta-desc">Join developers building the next generation of Discord music bots with RevvLink.</p>
+      <div class="revv-cta-actions">
+        <a href="guides/instant-start/" class="revv-btn revv-btn-primary revv-btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Instant Start ⚡
+        </a>
+        <a href="installation/" class="revv-btn revv-btn-outline revv-btn-lg">
+          Installation Guide
+        </a>
+      </div>
+      <div class="revv-cta-install">
+        <code>pip install revvlink</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Regular page content (from index.md) -->
+<div class="revv-page-content md-typeset">
+  
+</div>
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 JustNixx &amp; Dipendra-creator — MIT License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/ded-lmfao/RevvLink" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://pypi.org/project/revvlink/" target="_blank" rel="noopener" title="PyPI" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.6-183.4a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/7KcKr2Grc7" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sticky", "navigation.sections", "navigation.expand", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.code.select", "content.tooltips", "announce.dismiss", "header.autohide", "toc.follow", "toc.sticky"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
