@@ -7,6 +7,7 @@ on:
       - main
 
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
     branches:
       - main
 
@@ -17,6 +18,13 @@ permissions:
 
 jobs:
   build:
+    if: |
+      (github.event_name == 'push' && github.ref_name == 'main') ||
+      (github.event_name == 'pull_request' && (
+        contains(github.event.pull_request.labels.*.name, 'sonarcube') ||
+        contains(github.event.pull_request.labels.*.name, 'analyze&check')
+      )) ||
+      (github.event_name == 'workflow_dispatch')
     name: Build and analyze
     runs-on: ubuntu-latest
     

@@ -9,6 +9,7 @@ on:
 
 
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
     branches:
       - main
 
@@ -17,6 +18,13 @@ on:
  
 jobs:
   check:
+    if: |
+      (github.event_name == 'push' && github.ref_name == 'main') ||
+      (github.event_name == 'pull_request' && (
+        contains(github.event.pull_request.labels.*.name, 'versionchecks') ||
+        contains(github.event.pull_request.labels.*.name, 'analyze&check')
+      )) ||
+      (github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
