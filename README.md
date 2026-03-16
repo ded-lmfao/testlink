@@ -6,8 +6,8 @@
   <h3>The Definitive Lavalink Wrapper for Python</h3>
 
   <p align="center">
-    <a href="https://pypi.org/project/revvlink/"><img src="https://img.shields.io/pypi/v/RevvLink?style=for-the-badge&color=blue" alt="PyPI version"></a>
-    <a href="https://pypi.org/project/revvlink/"><img src="https://img.shields.io/pypi/pyversions/RevvLink?style=for-the-badge&color=3776AB" alt="Python versions"></a>
+    <a href="https://pypi.org/project/revvlink/"><img src="https://img.shields.io/pypi/v/revvlink?style=for-the-badge&color=blue" alt="PyPI version"></a>
+    <a href="https://pypi.org/project/revvlink/"><img src="https://img.shields.io/pypi/pyversions/revvlink?style=for-the-badge&color=3776AB" alt="Python versions"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License"></a>
     <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge" alt="Status">
   </p>
