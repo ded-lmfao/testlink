@@ -35,7 +35,7 @@ __title__ = "RevvLink"
 __author__ = "@JustNixx and @Dipendra-creator"
 __license__ = "MIT"
 __copyright__ = "Copyright 2026-Present (c) @JustNixx and @Dipendra-creator"
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 from .enums import *
 from .exceptions import *
