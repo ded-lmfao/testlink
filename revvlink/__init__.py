@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (c) 2026-Present @JustNixx and @IamGroot
+Copyright (c) 2026-Present @JustNixx and @Dipendra-creator
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -27,14 +27,14 @@ RevvLink
 A modern, simple, and powerful Lavalink wrapper for discord.py and its derivatives.
 Built with performance and ease of use in mind.
 
-:copyright: (c) 2026-Present @JustNixx and @IamGroot
+:copyright: (c) 2026-Present @JustNixx and @Dipendra-creator
 :license: MIT, see LICENSE for more details.
 """
 
 __title__ = "RevvLink"
-__author__ = "@JustNixx and @IamGroot"
+__author__ = "@JustNixx and @Dipendra-creator"
 __license__ = "MIT"
-__copyright__ = "Copyright 2026-Present (c) @JustNixx and @IamGroot"
+__copyright__ = "Copyright 2026-Present (c) @JustNixx and @Dipendra-creator"
 __version__ = "1.0.0"
 
 from .enums import *

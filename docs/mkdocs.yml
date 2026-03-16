@@ -2,9 +2,9 @@ site_name: RevvLink
 site_dir: ../site
 site_description: The elite Lavalink wrapper for Python. Engineered for high-load music bots with a focus on speed, stability, and developer velocity.
 site_url: https://revvlink.revvlabs.in
-repo_url: https://github.com/ded-lmfao/RevvLink
-repo_name: ded-lmfao/RevvLink
-copyright: Copyright &copy; 2026 JustNixx &amp; IamGroot — MIT License
+repo_url: https://github.com/RevvLabs/RevvLink
+repo_name: RevvLabs/RevvLink
+copyright: Copyright &copy; 2026 JustNixx &amp; Dipendra-creator — MIT License
 docs_dir: .
 theme:
   name: material

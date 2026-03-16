@@ -9,7 +9,7 @@ description = "A robust and powerful, fully asynchronous Lavalink wrapper built 
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  { name="@JustNixx and @IamGroot", email="nksmay13@gmail.com" },
+  { name="@JustNixx and @Dipendra-creator", email="nksmay13@gmail.com" },
 ]
 classifiers = [
     "License :: OSI Approved :: MIT License",
