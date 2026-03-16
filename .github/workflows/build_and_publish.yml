@@ -71,6 +71,7 @@ jobs:
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
+          verbose: true
 
   upload-to-github-release:
     name: Upload to GitHub Release
